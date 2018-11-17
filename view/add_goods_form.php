@@ -1,15 +1,8 @@
-<fieldset><p>Добавление фото</p><div id="add_goods_form">
+<fieldset><p>Добавление товара в категорию <?= $id ?> </p><div id="add_goods_form">
         <form id="add goods" method="post">
             <label> Наименование товара: <input type="text" name="good"/></label>
             <label> Цена: <input type="number" name="price"/></label>
             <label> Описание: <textarea name="description"></textarea></label>
-            <label> Категория: <select id="categories">
-                    <option>-</option>
-                    <option>Кофе</option>
-                    <option>Чай</option>
-                    <option>Кофемашины</option>
-                    <option>Прочее</option>
-                </select></label>
             <label> Производитель: <select id="manufacturers">
                     <option>-</option>
                     <option>Nescafe</option>
