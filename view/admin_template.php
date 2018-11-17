@@ -9,5 +9,8 @@
 </head>
 <body>
     admin panel
+    <?php
+        include_once 'add_goods_form.php';
+    ?>
 </body>
 </html>
