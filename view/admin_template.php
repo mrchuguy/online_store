@@ -8,9 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    admin panel
+    <p>admin panel</p>
     <?php
-        include_once 'add_goods_form.php';
+    new Admin_router();
     ?>
 </body>
 </html>
