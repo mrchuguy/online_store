@@ -4,6 +4,7 @@ class Admin_router
 {
     public $input_type;
     public $action;
+    public $category;
 
     public function __construct()
     {
@@ -13,8 +14,13 @@ class Admin_router
             $this->action = filter_input(INPUT_GET, 'action');
             if ($this->action === 'users'){
                 $admin_html->users();
-            }elseif($this->action === 'goods'){
-                $admin_html->goods();
+            }elseif($this->action === 'categories'){
+                $this->category = filter_input(INPUT_GET, 'category');
+                if(!is_null($this->category)){
+                    $admin_html->category($this->category);
+                }else{
+                    $admin_html->categories();
+                }
             }elseif ($this->action === 'orders'){
                 $admin_html->orders();
             }else{
