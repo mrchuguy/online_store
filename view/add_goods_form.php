@@ -17,7 +17,7 @@
                     <option>Мексика</option>
                     <option>Никарагуа</option>
                 </select></label>
-            <label> Добавить фото: <input type="file" accept="image/*" multiple/></label>
+            <label> Добавить фото: <input type="file" name="image" accept="image/*" multiple/></label>
             <input type="submit" value="Добавить товар"/>
         </form>
     </div></fieldset>
