@@ -1,8 +1,10 @@
 <?php
 class AddImage
 {
-    static public function addImage(){
-        $image = $_FILE['image'];
-        move_uploaded_file($image["tmp_name"], "..".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.$image['name']);
+    static public function addImg(){
+        $images = $_FILES['image'];
+        foreach($images['name'] as $i=>$image){
+            move_uploaded_file($images["tmp_name"][$i], "..".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.$image);
+        }
     }
 }
