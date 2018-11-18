@@ -29,7 +29,7 @@ class Admin_router
             }
         } else {
 //            $input_value = filter_input(INPUT_POST, 'text');
-            AddImage::addImg();
+            // AddImage::addImg();
             echo 'post zapros';
         }
     }
