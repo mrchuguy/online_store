@@ -1,5 +1,5 @@
 <fieldset><p>Добавление товара в категорию <?= $id ?> </p><div id="add_goods_form">
-        <form id="add goods" method="post">
+        <form id="add goods" method="post" enctype="multipart/form-data">
             <label> Наименование товара: <input type="text" name="good"/></label>
             <label> Цена: <input type="number" name="price"/></label>
             <label> Описание: <textarea name="description"></textarea></label>
