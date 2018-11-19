@@ -18,10 +18,13 @@ class CategoriesModel {
 	}
     }
     public function addCategory($name) {
-	if ($this->db->connect_errno === 0) {
 	    $query = "insert into category (name) values ('" . $name . "');";
 	    $this->db->query($query);
 	    self::redirect();
 	}
+	    public function updateCategory($id, $name) {
+	    $query = "update category set name = '" . $name . "' where id ='" . $id;
+	    $this->db->query($query);
+	    self::redirect();
     }
 }
