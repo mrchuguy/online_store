@@ -5,6 +5,7 @@ class Admin_router
     public $input_type;
     public $action;
     public $category;
+    public $id;
 
     public function __construct()
     {
@@ -28,9 +29,19 @@ class Admin_router
                 $admin_html->admin_actions();
             }
         } else {
-//            $input_value = filter_input(INPUT_POST, 'text');
+            $this->action = filter_input(INPUT_POST, 'action');
+	    $this->category = filter_input(INPUT_POST, 'category');
+	    $this->id = filter_input(INPUT_POST, 'id');
+	    $category= new CategoriesModel();
+	    if ($this->action === 'addcategory'){
+		$category->addCategory($this->category);
+	    } else if($this->action === 'del_category'){
+		$category->delCategory($this->id);		
+	    } else if($this->action === 'update_category'){
+		$category->updateCategory($this->id, $this->category);
+	    }
             // AddImage::addImg();
-            echo 'post zapros';
+            
         }
     }
 }
