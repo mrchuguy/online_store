@@ -1,7 +1,6 @@
 <?php
     $obj = new CategoriesModel();
     $categories = $obj->getCategory();
-    var_dump($categories);
     echo '<button>добавить категорию</button>';
     echo '<ol>';
     foreach($categories as $i=>$category){
