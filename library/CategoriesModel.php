@@ -30,5 +30,6 @@ class CategoriesModel {
 	 public function delCategory($id) {
 	$query = 'delete from category where id=' . $id;
 	$this->db->query($query);
-	self::redirect()
+	self::redirect();
+	 }
 }
