@@ -6,7 +6,7 @@
     echo '<ol>';
     foreach($categories as $i=>$category){
         echo '<li>';
-        echo '<a href="/admin/admin.php?action=categories&category='.$i.'">'.$category.'</a>';
+        echo '<a href="/admin/admin.php?action=categories&category='.$i.'">'.$category['name'].'</a>';
         echo '<form method="POST">';
         echo '<input type="submit" value="X">';
         echo '<input type="hidden" name="action" value="delcategory">';
