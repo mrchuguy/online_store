@@ -17,7 +17,6 @@ class Admin_router
                 $admin_html->users();
             }elseif($this->action === 'categories'){
                 $this->category = filter_input(INPUT_GET, 'category');
-
                 if(is_null($this->category)){
                     $admin_html->categories();
                 }else{
