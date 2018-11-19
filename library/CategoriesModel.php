@@ -17,9 +17,9 @@ class CategoriesModel {
 	    }
 	}
     }
-    public function addCategory($category) {
+    public function addCategory($name) {
 	if ($this->db->connect_errno === 0) {
-	    $query = "insert into articles (category) values ('" . $category . "');";
+	    $query = "insert into category (name) values ('" . $name . "');";
 	    $this->db->query($query);
 	    self::redirect();
 	}
