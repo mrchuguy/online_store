@@ -30,14 +30,16 @@ class Admin_router
         } else {
             $this->action = filter_input(INPUT_POST, 'action');
 	    $this->category = filter_input(INPUT_POST, 'category');
-	    $this->id = filter_input(INPUT_POST, 'id');	    
-	    $this->category= new CategoriesModel();
+	    $this->id = filter_input(INPUT_POST, 'id');
+	    $category= new CategoriesModel();
 	    if ($this->action === 'addcategory'){
-		$this->category->addCategory($this->category);
+		$category->addCategory($this->category);
 	    } else if($this->action === 'del_category'){
-		$this->category->delCategory($this->id);		
+		$category->delCategory($this->id);		
 	    } else if($this->action === 'update_category'){
-		$this->category->updateCategory($this->id, $this->category);
+		$admin_html->update_category();		
+	    }else if($this->action === 'update_category_form'){
+		$category->updateCategory($this->id, $this->category);
 	    }
             // AddImage::addImg();
             
