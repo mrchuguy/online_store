@@ -37,6 +37,8 @@ class Admin_router
 	    } else if($this->action === 'del_category'){
 		$this->category->delCategory($this->id);		
 	    } else if($this->action === 'update_category'){
+		$admin_html->update_category();		
+	    }else if($this->action === 'update_category_form'){
 		$this->category->updateCategory($this->id, $this->category);
 	    }
             // AddImage::addImg();
