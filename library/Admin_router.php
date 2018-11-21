@@ -31,13 +31,15 @@ class Admin_router
             $this->action = filter_input(INPUT_POST, 'action');
 	    $this->category = filter_input(INPUT_POST, 'category');
 	    $this->id = filter_input(INPUT_POST, 'id');
-	    $category= new CategoriesModel();
+	    var_dump($this->id);
+	    exit();
+	    $this->category= new CategoriesModel();
 	    if ($this->action === 'addcategory'){
-		$category->addCategory($this->category);
+		$this->category->addCategory($this->category);
 	    } else if($this->action === 'del_category'){
-		$category->delCategory($this->id);		
+		$this->category->delCategory($this->id);		
 	    } else if($this->action === 'update_category'){
-		$category->updateCategory($this->id, $this->category);
+		$this->category->updateCategory($this->id, $this->category);
 	    }
             // AddImage::addImg();
             
