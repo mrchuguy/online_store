@@ -27,7 +27,8 @@ class CategoriesModel {
     }
 
     public function updateCategory($id, $name) {
-	$query = "update category set name = '" . $name . "' where id ='" . $id;
+	$query = "update category set name = '" . $name . "' where id ='" . "$id";
+	var_dump($query);
 	$this->db->query($query);
 	//header('location:http://r2d2-online-store/admin/admin.php?action=categories');
     }
