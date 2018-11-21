@@ -5,7 +5,6 @@ class View
         echo 'форма добавления нового пользователя, ниже все пользователи с кнопкой удалить';
     }
     public function categories(){
-        echo '<p>кнопка добавить категорию, ниже все категории с кнопкой переименовать</p>';
         include_once '../view/categories.php';
     }
     public function orders(){
