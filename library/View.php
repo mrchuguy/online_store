@@ -17,4 +17,7 @@ class View
         //echo 'category'.$id;
         include_once '../view/add_goods_form.php';
     }
+    public function update_category(){
+	include_once '../view/update_category.php';
+    }
 }
