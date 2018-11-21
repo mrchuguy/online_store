@@ -3,11 +3,10 @@
 
 class Goods_model {
     
-    private $dbname = 'r2d2_articles';
     private $db;
-
+	
     public function __construct() {
-	$this->db = new mysqli($this->dbname);
+	$this->db = new mysqli(HOST, LOGIN, PASS, NAME);
     }
     
     static public function redirect() {
@@ -15,15 +14,12 @@ class Goods_model {
     }
     
     public function getManufacturers() {
-        exit('ghgj');
 	if ($this->db->connect_errno === 0) {
-	    $query = 'select name from manufacturers';
+	    $query = 'select * from manufacturers';
 	    $res = $this->db->query($query);
 	    if ($res) {
                 $manufacturers = $res->fetch_all(MYSQLI_ASSOC);
-                var_dump($manufacturers);
-                exit();
-		return $manufacturers;
+                return $manufacturers;
 	    } else {
 		return false;
 	    }
@@ -32,17 +28,31 @@ class Goods_model {
     
     public function getCountries() {
 	if ($this->db->connect_errno === 0) {
-	    $query = 'select name from countries';
+	    $query = 'select * from countries';
 	    $res = $this->db->query($query);
 	    if ($res) {
-		return $res->fetch_all(MYSQLI_ASSOC);
+                $countries = $res->fetch_all(MYSQLI_ASSOC);
+		return $countries;
 	    } else {
 		return false;
 	    }
 	}
     }
     
-    public function addGood($good, $price, $description, $manufact_count_id, $category_id) {
+    public function getGoods(){
+        if ($this->db->connect_errno === 0) {
+	    $query = 'select * from goods where category_id';
+	    $res = $this->db->query($query);
+	    if ($res) {
+                $goods = $res->fetch_all(MYSQLI_ASSOC);
+                return $goods;
+	    } else {
+		return false;
+	    }
+	}
+    }
+
+        public function addGood($good, $price, $description, $manufact_count_id, $category_id) {
 	if ($this->db->connect_errno === 0) {
 	    $query = "insert into goods (name, price, description, manufact_count_id, category_id) values ('" . $name . "','" . $price . "','" . $description . "','" . $manufact_count_id . "','" . $category_id . "');";
 	    $this->db->query($query);

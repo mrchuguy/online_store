@@ -1,19 +1,24 @@
-<fieldset><p>Р”РѕР±Р°РІР»РµРЅРёРµ С‚РѕРІР°СЂР° РІ РєР°С‚РµРіРѕСЂРёСЋ <?= $id ?> </p><div id="add_goods_form">
+<?php
+$goods_model = new Goods_model();
+$manufacturers = $goods_model->getManufacturers();
+$countries = $goods_model->getCountries();
+?>
+<fieldset><p>Добавление товара в категории <?= $id ?> </p><div id="add_goods_form">
         <form id="add goods" method="post" enctype="multipart/form-data">
-            <label> РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РѕРІР°СЂР°: <input type="text" name="good"/></label>
-            <label> Р¦РµРЅР°: <input type="number" name="price"/></label>
-            <label> РћРїРёСЃР°РЅРёРµ: <textarea name="description"></textarea></label>
-            <label> РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ: <select id="manufacturers" name="manufacturer">
-                                        
+            <label> Наименование товара: <input type="text" name="good"/></label>
+            <label> Цена: <input type="number" name="price"/></label>
+            <label> Описание: <textarea name="description"></textarea></label>
+            <label> Выберите производителя: <select id="manufacturers" name="manufacturer">
+                            <?php foreach ($manufacturers as $id => $manufacturer) :?>
+                    <option value="<?=$manufacturer['id']?>"><?=$manufacturer['name']?></option> 
+                    <?php                    endforeach;?>
                 </select></label>
-            <label> РЎС‚СЂР°РЅР° РїСЂРѕРёР·РІРѕРґСЃС‚РІР°: <select id="countries" name="country">
-                    <option>-</option>
-                    <option>Р‘СЂР°Р·РёР»РёСЏ</option>
-                    <option>РљРѕР»СѓРјР±РёСЏ</option>
-                    <option>РњРµРєСЃРёРєР°</option>
-                    <option>РќРёРєР°СЂР°РіСѓР°</option>
+            <label> Выберите страну производства: <select id="countries" name="country">
+                    <?php foreach ($countries as $id => $country) :?>
+                    <option value="<?=$country['id']?>"><?=$country['name']?></option> 
+                    <?php                    endforeach;?>
                 </select></label>
-            <label> Р”РѕР±Р°РІРёС‚СЊ С„РѕС‚Рѕ: <input type="file" name="image[]" accept="image/*" multiple/></label>
-            <input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ С‚РѕРІР°СЂ"/>
+            <label> Добавить картинку: <input type="file" name="image[]" accept="image/*" multiple/></label>
+            <input type="submit" value="Добавить товар"/>
         </form>
     </div></fieldset>
