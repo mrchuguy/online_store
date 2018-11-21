@@ -1,10 +1,9 @@
 <?php
 
 class CategoriesModel {
-    
-	
-	private $db;
-	
+
+    private $db;
+
     public function __construct() {
 	$this->db = new mysqli(HOST, LOGIN, PASS, NAME);
     }
@@ -20,16 +19,22 @@ class CategoriesModel {
 	    }
 	}
     }
+
     public function addCategory($name) {
-	    $query = "insert into category (name) values ('" . $name . "');";
-	    $this->db->query($query);
-	}
-	    public function updateCategory($id, $name) {
-	    $query = "update category set name = '" . $name . "' where id ='" . $id;
-	    $this->db->query($query);
-    }
-	 public function delCategory($id) {
-	$query = 'delete from category where id=' . $id;
+	$query = "insert into category (name) values ('" . $name . "');";
 	$this->db->query($query);
-	 }
+    }
+
+    public function updateCategory($id, $name) {
+	$query = "update category set name = '" . $name . "' where id ='" . $id;
+	$this->db->query($query);
+    }
+
+    public function delCategory($id) {
+	$query = 'delete from category where id=' . $id;
+	var_dump($query);
+	exit();
+	$this->db->query($query);
+    }
+
 }
