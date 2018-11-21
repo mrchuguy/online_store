@@ -21,8 +21,6 @@ class CategoriesModel {
     }
 
     public function addCategory($name) {
-	$query = "insert into category (name) values ('" . $name . "');";
-	$this->db->query($query);
     }
 
     public function updateCategory($id, $name) {
@@ -31,7 +29,8 @@ class CategoriesModel {
     }
 
     public function delCategory($id) {
-	$query = 'delete from category where id=' . $id;
+	$query = 'delete from category where id=' . "$id";
+	var_dump($query);
 	var_dump($query);
 	exit();
 	$this->db->query($query);
