@@ -39,9 +39,9 @@ class Goods_model {
 	}
     }
     
-    public function getGoods(){
+    public function getGoods($id){
         if ($this->db->connect_errno === 0) {
-	    $query = 'select * from goods where category_id';
+	    $query = 'select * from goods where category_id='."'$id'";
 	    $res = $this->db->query($query);
 	    if ($res) {
                 $goods = $res->fetch_all(MYSQLI_ASSOC);
