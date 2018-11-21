@@ -22,18 +22,18 @@
 
 <button>добавить категорию</button>
 <ol>
-<?php foreach($categories as $i=>$category){?>
+<?php foreach($categories as $category){?>
     <li>
-        <a href="/admin/admin.php?action=categories&category=<?= $i?>"><?= $category['name']?></a>
+        <a href="/admin/admin.php?action=categories&category=<?= $category[$id]?>"><?= $category['name']?></a>
         <form method="POST">
             <input type="submit" value="X">
             <input type="hidden" name="action" value="del_category">
-            <input type="hidden" name="id" value="<?= $i?>">
+            <input type="hidden" name="id" value="<?= $category[$id]?>">
         </form>
         <form method="POST">
             <input type="submit" value="edit">
             <input type="hidden" name="action" value="update_category">
-            <input type="hidden" name="id" value="<?= $i?>">
+            <input type="hidden" name="id" value="<?= $category[$id]?>">
         </form>
     </li>
 <?php }?>
