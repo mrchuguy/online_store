@@ -23,20 +23,19 @@ class CategoriesModel {
     public function addCategory($name) {
 	$query = "insert into category (name) values ('" . $name . "');";
 	$this->db->query($query);
-	//header('location:http://r2d2-online-store/admin/admin.php?action=categories');
+	self::redirect();
     }
 
     public function updateCategory($id, $name) {
 	$query = "update category set name = '" . $name . "' where id =" . "$id";
-	var_dump($query);
 	$this->db->query($query);
-	//header('location:http://r2d2-online-store/admin/admin.php?action=categories');
+	self::redirect();
     }
 
     public function delCategory($id) {
 	$query = 'delete from category where id=' . "$id";
 	$this->db->query($query);
-	//header('location:http://r2d2-online-store/admin/admin.php?action=categories');
+	self::redirect();
     }
 
 }
