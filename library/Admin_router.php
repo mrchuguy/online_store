@@ -30,9 +30,7 @@ class Admin_router
         } else {
             $this->action = filter_input(INPUT_POST, 'action');
 	    $this->category = filter_input(INPUT_POST, 'category');
-	    $this->id = filter_input(INPUT_POST, 'id');
-	    var_dump($this->id);
-	    exit();
+	    $this->id = filter_input(INPUT_POST, 'id');	    
 	    $this->category= new CategoriesModel();
 	    if ($this->action === 'addcategory'){
 		$this->category->addCategory($this->category);

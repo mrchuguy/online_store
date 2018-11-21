@@ -30,8 +30,10 @@ class CategoriesModel {
 	$this->db->query($query);
     }
 
-    public function delCategory($id) {	
+    public function delCategory($id) {
 	$query = 'delete from category where id=' . $id;
+	var_dump($query);
+	exit();
 	$this->db->query($query);
     }
 
