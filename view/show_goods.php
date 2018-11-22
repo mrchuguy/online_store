@@ -4,7 +4,7 @@ $manufacturers = $goods_model->getManufacturers();
 $countries = $goods_model->getCountries();
 $goods = $goods_model->getGoods($id);
 // var_dump($goods);
-var_dump($manufacturers);
+// var_dump($manufacturers);
 foreach($goods as $goods_item){
 ?>
 <div>
