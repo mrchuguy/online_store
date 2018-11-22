@@ -9,5 +9,8 @@
 </head>
 <body>
     front
+    <?php
+    new Router();
+    ?>
 </body>
 </html>
