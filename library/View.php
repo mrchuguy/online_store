@@ -20,4 +20,11 @@ class View
     public function update_category(){
 	include_once '../view/update_category.php';
     }
+    public function actions(){
+        include_once 'view/actions.php';
+    }
+    public function goods($id){
+        //echo 'category'.$id;
+        include_once 'view/show_goods.php';
+    }
 }
