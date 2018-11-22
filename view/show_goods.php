@@ -11,7 +11,12 @@ foreach($goods as $goods_item){
     <ul>
         <li><?= $goods_item['name']?></li>
         <li>Price:<?= $goods_item['price']?></li>
-        <li>Description:<?= $goods_item['description']?></li>
+        <li><a href="#">Подробней</a></li>
+        <li>
+            <form>
+                <input type="submit" value="купить">
+            </form>
+        </li>
     </ul>
 </div>
 <?php
