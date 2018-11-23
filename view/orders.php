@@ -1,11 +1,13 @@
 <?php
     $obj_orders = new OrdersModel();
     $orders = $obj_orders->getOrder();
+//    var_dump($orders);
+//    exit();
 ?>
 <table>
 <?php foreach($orders as $order){?>
     <tr>
-        <td><?= $order['customer_id']?></td>
+        <td><?= $order['name'].' '.$order['surname']?></td>
         <td><?= $order['comment']?></td>
         <td><?= $order['status']?></td>
         <td>
