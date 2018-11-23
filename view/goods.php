@@ -1,7 +1,7 @@
 <?php
 include_once '../includes/autoloader.php';
 $goods_model = new Goods_model();
-$goods = $goods_model->getGoods('1');
+$goods = $goods_model->getGoods($id);
 var_dump($goods);
 ?>
 
