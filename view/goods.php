@@ -1,7 +1,7 @@
 <?php
 include_once '../includes/autoloader.php';
 $goods_model = new Goods_model();
-$goods = $goods_model->getGoods($id);
+$goods = $goods_model->getGoods('1');
 var_dump($goods);
 ?>
 
@@ -29,10 +29,10 @@ var_dump($goods);
             <?= $good['description']?>
         </td>
         <td>
-            <?= $good['price']?>
+            <?= $good['manufacturer']?>
         </td>
         <td>
-            <?= $good['price']?>
+            <?= $good['country']?>
         </td>
         <td>
             <?= $good['category_id']?>
