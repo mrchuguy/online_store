@@ -27,6 +27,7 @@ class Admin_router
             }else{
                 $admin_html->admin_actions();
             }
+	    $admin_html->render();
         } else {
             $this->action = filter_input(INPUT_POST, 'action');
 	    $this->category = filter_input(INPUT_POST, 'category');
@@ -41,6 +42,7 @@ class Admin_router
 	    }else if($this->action === 'update_category_form'){
 		$category->updateCategory($this->id, $this->category);
 	    }
+	    header('Location: '.$_SERVER['REQUEST_URI']);
             // AddImage::addImg();
             
         }
