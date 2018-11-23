@@ -47,6 +47,8 @@ class Admin_router
 	    }else if($this->action === 'update_category_form'){
 		$category->updateCategory($this->id, $this->category);
 		self::redirect();
+	    }else if ($this->action === 'users'){
+		exit('ok');
 	    }
 	    
             // AddImage::addImg();
