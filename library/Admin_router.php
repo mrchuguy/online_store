@@ -44,7 +44,7 @@ class Admin_router
 	    }
 	    header('Location: '.$_SERVER['REQUEST_URI']);
             // AddImage::addImg();
-            
+            $admin_html->render();
         }
     }
 }
