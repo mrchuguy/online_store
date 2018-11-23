@@ -11,7 +11,7 @@
 <body>
     <p>admin panel</p>
     <?php
-    new Admin_router();
+    $page;
     ?>
 </body>
 </html>
