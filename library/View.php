@@ -9,7 +9,7 @@ class View
         $this->page= '../view/categories.php';
     }
     public function orders(){
-        echo 'все заказы, у необработаных кнопка обработан';
+        $this->page= '../view/orders.php';
     }
     public function admin_actions(){
         $this->page= '../view/admin_actions.php';
