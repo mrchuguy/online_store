@@ -23,19 +23,16 @@ class CategoriesModel {
     public function addCategory($name) {
 	$query = "insert into category (name) values ('" . $name . "');";
 	$this->db->query($query);
-	self::redirect();
     }
 
     public function updateCategory($id, $name) {
 	$query = "update category set name = '" . $name . "' where id =" . "$id";
 	$this->db->query($query);
-	self::redirect();
     }
 
     public function delCategory($id) {
 	$query = 'delete from category where id=' . "$id";
 	$this->db->query($query);
-	self::redirect();
     }
 
 }

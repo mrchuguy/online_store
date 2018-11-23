@@ -24,4 +24,11 @@ class View
 	include_once '../view/admin_template.php';
 	include_once $this->page;
     }
+    //---
+    public function actions(){
+        include_once 'view/actions.php';
+    }
+    public function goods($id){
+        include_once 'view/show_goods.php';
+    }
 }
