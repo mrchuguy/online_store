@@ -5,7 +5,7 @@ $manufacturers = $goods_model->getManufacturers();
 $countries = $goods_model->getCountries();
 $add_good = $goods_model->addGood($name, $price, $description, $manufacturer_id, $country_id, $category_id);
 ?>
-<fieldset><p>Добавление товара в категории <?= $id ?> </p><div id="add_goods_form">
+<fieldset><p>Добавить товар в категорию <?= $id ?> </p><div id="add_goods_form">
         <form id="add goods" method="post" enctype="multipart/form-data">
             <label> Наименование товара: <input type="text" name="name"/></label>
             <label> Цена: <input type="number" name="price"/></label>
