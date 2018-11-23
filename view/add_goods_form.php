@@ -3,7 +3,7 @@ $goods_model = new Goods_model();
 $manufacturers = $goods_model->getManufacturers();
 $countries = $goods_model->getCountries();
 ?>
-<fieldset><p>Добавление товара в категории <?= $id ?> </p><div id="add_goods_form">
+<fieldset><p>Добавить товар в категорию <?= $id ?> </p><div id="add_goods_form">
         <form id="add goods" method="post" enctype="multipart/form-data">
             <label> Наименование товара: <input type="text" name="good"/></label>
             <label> Цена: <input type="number" name="price"/></label>

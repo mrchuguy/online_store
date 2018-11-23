@@ -6,8 +6,12 @@ class Admin_router
     public $action;
     public $category;
     public $id;
+    
+    static private function redirect(){
+	header('Location: '.$_SERVER['REQUEST_URI']);
+    }
 
-    public function __construct()
+        public function __construct()
     {
         $this->input_type = $_SERVER['REQUEST_METHOD'];
         $admin_html = new View();
@@ -26,8 +30,7 @@ class Admin_router
                 $admin_html->orders();
             }else{
                 $admin_html->admin_actions();
-            }
-	    $admin_html->render();
+            }	    
         } else {
             $this->action = filter_input(INPUT_POST, 'action');
 	    $this->category = filter_input(INPUT_POST, 'category');
@@ -35,16 +38,22 @@ class Admin_router
 	    $category= new CategoriesModel();
 	    if ($this->action === 'addcategory'){
 		$category->addCategory($this->category);
+		self::redirect();
 	    } else if($this->action === 'del_category'){
-		$category->delCategory($this->id);		
+		$category->delCategory($this->id);
+		self::redirect();
 	    } else if($this->action === 'update_category'){
 		$admin_html->update_category();		
 	    }else if($this->action === 'update_category_form'){
 		$category->updateCategory($this->id, $this->category);
+		self::redirect();
+	    }else if ($this->action === 'users'){
+		exit('ok');
 	    }
-	    header('Location: '.$_SERVER['REQUEST_URI']);
+	    
             // AddImage::addImg();
             
         }
+	$admin_html->render();
     }
 }

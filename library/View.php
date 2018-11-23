@@ -3,13 +3,14 @@ class View
 {
     private $page;
     public function users(){
-        echo 'форма добавления нового пользователя, ниже все пользователи с кнопкой удалить';
+        $this->page= '../view/add_user_form.php';
+	
     }
     public function categories(){
         $this->page= '../view/categories.php';
     }
     public function orders(){
-        echo 'все заказы, у необработаных кнопка обработан';
+        $this->page= '../view/orders.php';
     }
     public function admin_actions(){
         $this->page= '../view/admin_actions.php';
