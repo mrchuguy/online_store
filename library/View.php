@@ -3,7 +3,8 @@ class View
 {
     private $page;
     public function users(){
-        echo 'форма добавления нового пользователя, ниже все пользователи с кнопкой удалить';
+        $this->page= '../view/add_user_form.php';
+	
     }
     public function categories(){
         $this->page= '../view/categories.php';
