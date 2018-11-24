@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    front
     <?php
     new Router();
     ?>

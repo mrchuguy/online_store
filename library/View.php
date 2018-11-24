@@ -32,4 +32,7 @@ class View
     public function goods($id){
         include_once 'view/show_goods.php';
     }
+    public function full_descr_goods($category_id,$goods_id){
+        include_once 'view/show_full_descr_goods.php';
+    }
 }
