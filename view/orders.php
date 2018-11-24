@@ -1,8 +1,6 @@
 <?php
     $obj_orders = new OrdersModel();
     $orders = $obj_orders->getOrder();
-//    var_dump($orders);
-//    exit();
 ?>
 <table>
 <?php foreach($orders as $order){?>
