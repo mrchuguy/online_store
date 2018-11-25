@@ -7,6 +7,8 @@
  }
  $goods_model = new Goods_model();
  $goods = $goods_model->getAllGoods();
+//  var_dump($goods);
+ var_dump($_SESSION);
 ?>
 <table>
     <tr>
@@ -16,15 +18,17 @@
         <th>total price</th>
     </tr>
 <?php
-    foreach($goods as $name=>$goods_item){
+    foreach($goods as $goods_item){
+        if($_SESSION[$goods_item['name']]!== null){
 ?>
     <tr>
-        <td><?= $name ?></td>
-        <td><?= 0?></td>
-        <td><?= $number?></td>
-        <td><?= 0?></td>
+        <td><?= $goods_item['name'] ?></td>
+        <td><?= $goods_item['price']?></td>
+        <td><?= $_SESSION[$goods_item['name']]?></td>
+        <td><?= $goods_item['price']*$_SESSION[$goods_item['name']]?></td>
     </tr>
 <?php        
+        }
     } 
 ?>
 </table>
