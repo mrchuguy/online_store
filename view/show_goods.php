@@ -12,6 +12,7 @@ foreach($goods as $goods_item){
                 <form method="post">
                     <input type="submit" value="купить">
                     <input type="hidden" name="action" value="basket">
+                    <input type="hidden" name="goods_name" value="<?= $goods_item['name']?>">
                 </form>
             </td>
         </tr>

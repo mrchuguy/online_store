@@ -35,4 +35,7 @@ class View
     public function full_descr_goods($category_id,$goods_id){
         include_once 'view/show_full_descr_goods.php';
     }
+    public function basket(){
+        include_once 'view/basket.php';
+    }
 }

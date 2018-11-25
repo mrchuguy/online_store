@@ -76,6 +76,20 @@ class Goods_model {
 	    $this->db->query($query);
 	}
     }
+
+    //denis add
+    public function getAllGoods(){
+        if ($this->db->connect_errno === 0) {
+	    $query = 'SELECT goods.id, goods.name, goods.price, goods.description, manufacturers.name as manufacturer, countries.name as country, goods.category_id FROM goods LEFT OUTER JOIN manufacturer_country ON goods.manufact_count_id = manufacturer_country.id LEFT OUTER JOIN countries ON countries.id = manufacturer_country.country_id LEFT OUTER JOIN manufacturers ON manufacturers.id = manufacturer_country.manufacturer_id';
+	    $res = $this->db->query($query);
+	    if ($res) {
+                $goods = $res->fetch_all(MYSQLI_ASSOC);
+                return $goods;
+	    } else {
+		return false;
+	    }
+	}
+    }
     
     
 }

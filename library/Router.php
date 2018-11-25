@@ -19,6 +19,11 @@ class Router
             }else {
                 $html->actions();
             }
+       } else {
+        $this->action = filter_input(INPUT_POST, 'action');
+        if($this->action === 'basket'){
+          $html->basket();
+        }
        }
     }
 }
