@@ -9,8 +9,9 @@ foreach($goods as $goods_item){
             <td>Price:<?= $goods_item['price']?></td>
             <td><a href="index.php?category=<?= $id?>&goods=<?= $goods_item['id']?>">Подробней</a></td>
             <td>
-                <form>
+                <form method="post">
                     <input type="submit" value="купить">
+                    <input type="hidden" name="action" value="basket">
                 </form>
             </td>
         </tr>
