@@ -38,12 +38,12 @@ var_dump($goods);
             <?= $good['category_id']?>
         </td>
         <td>
-            <form method="get">
+            <form method="post">
             <input type="submit" value="Удалить">
             <input type="hidden" name="action" value="delete_good">
             <input type="hidden" name="id" value="<?= $good['id']?>">
         </form>
-        <form method="get">
+        <form method="post">
             <input type="submit" value="Редактировать">
             <input type="hidden" name="action" value="edit_good">
             <input type="hidden" name="id" value="<?= $good['id']?>">
