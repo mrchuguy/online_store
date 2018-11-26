@@ -15,9 +15,10 @@ class View
     public function admin_actions(){
         $this->page= '../view/admin_actions.php';
     }
-    public function category($id){
-        $this->page= '../view/add_goods_form.php';
+    public function category(){
+        $this->page= '../view/goods.php';
     }
+    
     public function update_category(){
 	$this->page= '../view/update_category.php';
     }
