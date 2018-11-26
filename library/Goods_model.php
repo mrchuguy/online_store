@@ -58,8 +58,7 @@ class Goods_model {
     public function addGood($name, $price, $description, $manufacturer_id, $country_id, $category_id) {
 	if ($this->db->connect_errno === 0) {
 	    $query = "INSERT INTO goods (name, price, description, manufact_count_id, category_id) VALUES ('".$name."', '".$price."', '".$description."', (SELECT manufacturer_country.id FROM manufacturer_country WHERE country_id = '".$country_id."'&&manufacturer_id = '".$manufacturer_id."'), '".$category_id."')";
-	    $this->db->query($query);
-	    
+	    $this->db->query($query); 
 	}
     }
     

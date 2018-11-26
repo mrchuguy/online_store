@@ -40,6 +40,7 @@ class Admin_router {
 	    $this->category = filter_input(INPUT_POST, 'category');
 	    $this->id = filter_input(INPUT_POST, 'id');
 	    $category = new CategoriesModel();
+	    $good = new Goods_model();
 	    if ($this->action === 'addcategory') {
 		$category->addCategory($this->category);
 		self::redirect();
@@ -50,6 +51,15 @@ class Admin_router {
 		$admin_html->update_category();
 	    } else if ($this->action === 'update_category_form') {
 		$category->updateCategory($this->id, $this->category);
+		self::redirect();
+	    } else if ($this->action === 'add_good') {
+		$good->addGood($this->name, $this->price, $this->description, $this->manufacturer_id, $this->country_id, $this->category_id);
+		self::redirect();
+	    } else if ($this->action === 'delete_good') {
+		$good->deleteGood($this->id);
+		self::redirect();
+	    } else if ($this->action === 'edit_good') {
+		$good->editGood($this->id, $this->name, $this->price, $this->description, $this->manufacturer_id, $this->country_id, $this->category_id);
 		self::redirect();
 	    } else if ($this->action === 'users') {
 		exit('ok');
