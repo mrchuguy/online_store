@@ -24,5 +24,11 @@ class OrdersModel {
 	$query = "update orders set status = 'processed' where id =" . $id;
 	$this->db->query($query);
     }
-
-}
+	 
+	public function addCustomer($name, $surname, $phone, $email){
+		if ($this->db->connect_errno === 0) {
+			$query = "INSERT INTO customers (name, surname, phone, email) VALUES ('".$name."', '".$surname."', '".$phone."', '".$email."')";
+			$this->db->query($query); 
+		}
+	}
+} 

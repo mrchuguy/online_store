@@ -8,7 +8,7 @@
  $goods_model = new Goods_model();
  $goods = $goods_model->getAllGoods();
 //  var_dump($goods);
- var_dump($_SESSION);
+//  var_dump($_SESSION);
 ?>
 <table>
     <tr>
@@ -32,7 +32,7 @@
     } 
 ?>
 </table>
-<form>
+<form method="post">
     <input type="submit" value="оформить заказ">
     <input type="hidden" name="action" value="make_order">
 </form>

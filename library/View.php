@@ -39,4 +39,7 @@ class View
     public function basket(){
         include_once 'view/basket.php';
     }
+    public function make_order(){
+        include_once 'view/add_new_order.php';
+    }
 }
