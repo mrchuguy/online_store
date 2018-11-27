@@ -30,8 +30,27 @@ class Router
             $surname = filter_input(INPUT_POST, 'customer_surname');
             $phone = filter_input(INPUT_POST, 'customer_phone');
             $email = filter_input(INPUT_POST, 'customer_email');
+            $comment = filter_input(INPUT_POST, 'comment');
+            //----------------------
             $order = new OrdersModel();
             $order->addCustomer($name, $surname, $phone, $email);
+            //----------------------
+            $customer_id = $order->getLastCustomersId();
+            $customer_id2 = intval($customer_id["max(id)"]);
+            $order->addOrder($customer_id2, $comment);
+            //----------------------
+            $order_id = $order->getLastOrderId();
+            $order_id2 = intval($order_id["max(id)"]);
+            $goods_model = new Goods_model();
+            $goods = $goods_model->getAllGoods();
+            foreach($goods as $goods_item){
+                if($_SESSION[$goods_item['name']]!== null){
+                  $goods_id2 = intval($goods_item['id']);
+                  $number2 = intval($_SESSION[$goods_item['name']]);
+                  $order->addOrderGoods($order_id2, $goods_id2, $number2);
+                }
+            }
+            session_destroy();    
         }
        }
     }

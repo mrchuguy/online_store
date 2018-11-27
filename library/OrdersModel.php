@@ -31,4 +31,42 @@ class OrdersModel {
 			$this->db->query($query); 
 		}
 	}
+
+	public function getLastCustomersId(){
+		if ($this->db->connect_errno === 0) {
+	        $query = 'select max(id) from customers';
+	        $res = $this->db->query($query);
+	        if ($res) {
+		        return $res->fetch_assoc();
+	        } else {
+		        return false;
+	        }
+	    }
+	}
+
+	public function addOrder($customer_id, $comment){
+		if ($this->db->connect_errno === 0) {
+			$query = "INSERT INTO orders (customer_id, comment, status) VALUES (".$customer_id.", '".$comment."', 'not processed')";
+			$this->db->query($query); 
+		}
+	}
+
+	public function getLastOrderId(){
+		if ($this->db->connect_errno === 0) {
+	        $query = 'select max(id) from orders';
+	        $res = $this->db->query($query);
+	        if ($res) {
+		        return $res->fetch_assoc();
+	        } else {
+		        return false;
+	        }
+	    }
+	}
+
+	public function addOrderGoods($order_id, $goods_id, $number){
+		if ($this->db->connect_errno === 0) {
+			$query = "INSERT INTO order_goods (order_id, goods_id, number) VALUES (".$order_id.", ".$goods_id.", ".$number.")";
+			$this->db->query($query); 
+		}
+	}
 } 
