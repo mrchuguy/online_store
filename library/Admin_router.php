@@ -72,6 +72,11 @@ class Admin_router {
 			$user = new UsersModel();
 			$user->delUser($id);
 			self::redirect();
+	    } else if ($this->action === 'change_status_order') {
+			$id = filter_input(INPUT_POST, 'id');
+			$order = new OrdersModel();
+			$order->updateOrder($id);
+			self::redirect();
 	    }
 
 

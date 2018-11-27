@@ -15,7 +15,7 @@
                     <form method="post">
                         <input type="submit" value="add to processed">
                         <input type="hidden" name="action" value="change_status_order">
-                        <input type="hidden" name="id" value="<?= $order['id']?>"
+                        <input type="hidden" name="id" value="<?= $order['id']?>">
                     </form>
                 </td>
             </tr>

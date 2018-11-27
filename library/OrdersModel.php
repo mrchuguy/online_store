@@ -21,7 +21,7 @@ class OrdersModel {
     }
 
     public function updateOrder($id) {
-	$query = "update orders set status = 'processed' where id =" . "$id";
+	$query = "update orders set status = 'processed' where id =" . $id;
 	$this->db->query($query);
     }
 
