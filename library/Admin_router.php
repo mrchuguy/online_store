@@ -61,9 +61,19 @@ class Admin_router {
 	    } else if ($this->action === 'edit_good') {
 		$good->editGood($this->id, $this->name, $this->price, $this->description, $this->manufacturer_id, $this->country_id, $this->category_id);
 		self::redirect();
-	    } else if ($this->action === 'users') {
-		exit('ok');
+	    } else if ($this->action === 'add_user') {
+			$login = filter_input(INPUT_POST, 'login');
+			$password = filter_input(INPUT_POST, 'password');
+			$user = new UsersModel();
+			$user->addUser($login, $password);
+			self::redirect();
+	    } else if ($this->action === 'del_user') {
+			$id = filter_input(INPUT_POST, 'id');
+			$user = new UsersModel();
+			$user->delUser($id);
+			self::redirect();
 	    }
+
 
 	    // AddImage::addImg();
 	}

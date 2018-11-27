@@ -14,7 +14,7 @@ class UsersModel {
     }
     
     public function addUser($login, $password) {
-        $password_hash = password_hash($password);
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
 	$query = "insert into users (login, password) values ('" . $login . "','".$password_hash."');";
 	$this->db->query($query);
     }

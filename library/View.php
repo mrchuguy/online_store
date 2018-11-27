@@ -3,7 +3,7 @@ class View
 {
     private $page;
     public function users(){
-        $this->page= '../view/add_user_form.php';
+        $this->page= '../view/users.php';
 	
     }
     public function categories(){
