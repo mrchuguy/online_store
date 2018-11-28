@@ -53,6 +53,12 @@ class Admin_router {
 		$category->updateCategory($this->id, $this->category);
 		self::redirect();
 	    } else if ($this->action === 'add_good') {
+		$this->name = filter_input(INPUT_POST, 'name');
+		$this->price = filter_input(INPUT_POST, 'price');
+		$this->description = filter_input(INPUT_POST, 'description');
+		$this->manufacturer_id = filter_input(INPUT_POST, 'manufacturer');
+		$this->country_id = filter_input(INPUT_POST, 'country');
+		$this->category_id = filter_input(INPUT_GET, 'category');
 		$good->addGood($this->name, $this->price, $this->description, $this->manufacturer_id, $this->country_id, $this->category_id);
 		self::redirect();
 	    } else if ($this->action === 'delete_good') {
