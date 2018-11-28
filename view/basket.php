@@ -1,4 +1,5 @@
 <?php
+ $category_id = filter_input(INPUT_POST, 'category_id');
  $goods_name = filter_input(INPUT_POST, 'goods_name');
  if($_SESSION[$goods_name] === null){
     $_SESSION[$goods_name] = 1;
@@ -35,4 +36,6 @@
 <form method="post">
     <input type="submit" value="оформить заказ">
     <input type="hidden" name="action" value="make_order">
+    <input type="hidden" name="category_id" value="<?= $category_id?>">
 </form>
+<a href="index.php?category=<?= $category_id?>">продолжить покупки</a>

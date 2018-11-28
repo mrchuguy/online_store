@@ -50,7 +50,11 @@ class Router
                   $order->addOrderGoods($order_id2, $goods_id2, $number2);
                 }
             }
-            session_destroy();    
+            session_destroy();
+            $category_id = filter_input(INPUT_POST, 'category_id');
+            ?>
+            <a href="index.php?category=<?= $category_id?>">продолжить покупки</a>
+            <?php    
         }
        }
     }
