@@ -12,7 +12,8 @@ class Goods_model {
     public function getCategory($category_id){
 	if ($this->db->connect_errno === 0) {
 	    $query = 'SELECT category.name FROM category WHERE category.id = '.$category_id;
-	    $this->db->query($query);
+	    $res = $this->db->query($query);
+            return $res;
 	}
     }
     
